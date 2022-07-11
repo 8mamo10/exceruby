@@ -3,7 +3,7 @@
 require 'rubyXL'
 require 'rubyXL/convenience_methods'
 workbook = RubyXL::Workbook.new
-worksheet = workbook[0]
-worksheet.sheet_data[0] # Returns first row of the worksheet
-worksheet[0]            # Returns first row of the worksheet
+worksheet = workbook.worksheets[0]
+worksheet.sheet_name = "first sheet"
+worksheet.add_cell(0, 0, 'A1')
 workbook.write("./file.xlsx")
