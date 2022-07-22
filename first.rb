@@ -8,6 +8,7 @@ workbook = RubyXL::Workbook.new
 worksheet = workbook.worksheets[0]
 worksheet.sheet_name = "first sheet"
 worksheet.add_cell(0, 0, 'A1')
+workbook.add_worksheet("seconod sheet")
 
 # workbook - worksheet - sheet_data
 worksheet.sheet_data[0][0].change_contents("aaa")
