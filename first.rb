@@ -7,12 +7,12 @@ workbook = RubyXL::Workbook.new
 # workbook - worksheet
 worksheet = workbook.worksheets[0]
 worksheet.sheet_name = "first sheet"
-worksheet.add_cell(0, 0, 'A1')
 workbook.add_worksheet("seconod sheet")
 
 row = 0
 column = 0
 # workbook - worksheet - sheet_data
+worksheet.add_cell(0, 0, 'A1')
 worksheet.sheet_data[row][column].change_contents("aaa")
 
 # drop down
@@ -38,5 +38,11 @@ contents.each_with_index do |content, i|
   worksheet.sheet_data[row][column].change_contents("#{i}_#{content}")
   row += 1
 end
+# font
+row += 1
+column += 1
+worksheet.add_cell(row, column)
+worksheet.sheet_data[row][column].change_contents("big font")
+worksheet.sheet_data[row][column].change_font_size(36)
 
 workbook.write("./file.xlsx")
